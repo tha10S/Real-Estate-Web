@@ -1,4 +1,3 @@
-/* ===== CSS VARIABLES ===== */
 :root {
   --neon-lime: #ccff00;
   --electric-blue: #00f0ff;
@@ -11,7 +10,6 @@
   --glass: rgba(255, 255, 255, 0.05);
 }
 
-/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -31,12 +29,10 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
 }
 
-/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--off-black); }
 ::-webkit-scrollbar-thumb { background: var(--soft-purple); border-radius: 5px; }
 
-/* ===== CUSTOM CURSOR ===== */
 .cursor {
   width: 20px;
   height: 20px;
@@ -54,7 +50,6 @@ h1, h2, h3, h4, h5 {
   background: var(--neon-lime);
 }
 
-/* ===== NAVIGATION ===== */
 nav {
   position: fixed;
   top: 0;
@@ -128,7 +123,6 @@ nav {
   border-color: var(--neon-lime);
 }
 
-/* ===== HERO ===== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -209,7 +203,6 @@ nav {
 
 .hero-cta { display: flex; gap: 1rem; margin-top: 2rem; }
 
-/* ===== BUTTONS ===== */
 .btn-primary {
   padding: 1rem 2rem;
   background: var(--neon-lime);
@@ -252,7 +245,6 @@ nav {
   border-color: white;
 }
 
-/* ===== HERO VISUAL / FLOATING CARDS ===== */
 .hero-visual {
   position: relative;
   height: 600px;
@@ -294,7 +286,6 @@ nav {
   gap: 0.25rem;
 }
 
-/* ===== SECTIONS ===== */
 section {
   padding: 8rem 5%;
   position: relative;
@@ -330,7 +321,6 @@ section {
   font-size: 1.125rem;
 }
 
-/* ===== MARKET DATA CARDS ===== */
 .data-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -416,7 +406,6 @@ section {
   margin-top: 1rem;
 }
 
-/* ===== SUBURBS ===== */
 .suburbs-section {
   background: linear-gradient(180deg, var(--off-black) 0%, var(--deep-purple) 100%);
 }
@@ -478,7 +467,6 @@ section {
 .meta-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; }
 .meta-value { font-size: 1rem; font-weight: 600; color: white; margin-top: 0.25rem; }
 
-/* ===== VALUATION TOOL ===== */
 .valuation-bg {
   position: absolute;
   top: 0; left: 0;
@@ -607,7 +595,6 @@ section {
 .range-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
 .range-value { font-size: 1.25rem; font-weight: 600; color: white; }
 
-/* ===== TESTIMONIALS ===== */
 .testimonials {
   background: linear-gradient(180deg, var(--deep-purple) 0%, var(--off-black) 100%);
 }
@@ -659,7 +646,6 @@ section {
 .author-info h4 { font-size: 1rem; margin-bottom: 0.25rem; }
 .author-info p { font-size: 0.875rem; color: rgba(255,255,255,0.5); }
 
-/* ===== CONTACT ===== */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -752,7 +738,6 @@ section {
   box-shadow: 0 10px 30px rgba(0,240,255,0.3);
 }
 
-/* ===== FOOTER ===== */
 footer {
   padding: 4rem 5%;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -786,7 +771,6 @@ footer {
 
 .footer-text { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 968px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { display: none; }

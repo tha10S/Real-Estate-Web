@@ -1,4 +1,3 @@
-// ===== CUSTOM CURSOR =====
 var cursor = document.getElementById('cursor');
 
 document.addEventListener('mousemove', function(e) {
@@ -15,7 +14,6 @@ document.addEventListener('mouseup', function() {
 });
 
 
-// ===== MINI CHART (Hero) =====
 function buildMiniChart() {
   var ctx = document.getElementById('miniChart1');
   if (!ctx) return;
@@ -47,7 +45,6 @@ function buildMiniChart() {
 }
 
 
-// ===== PRICE TREND CHART =====
 function buildPriceChart() {
   var ctx = document.getElementById('priceChart');
   if (!ctx) return;
@@ -89,7 +86,6 @@ function buildPriceChart() {
 }
 
 
-// ===== SUBURB SALES BAR CHART =====
 function buildSuburbChart() {
   var ctx = document.getElementById('suburbChart');
   if (!ctx) return;
@@ -130,7 +126,6 @@ function buildSuburbChart() {
 }
 
 
-// ===== PROPERTY TYPE DOUGHNUT CHART =====
 function buildTypeChart() {
   var ctx = document.getElementById('typeChart');
   if (!ctx) return;
@@ -165,8 +160,6 @@ function buildTypeChart() {
 }
 
 
-// ===== VALUATION CALCULATOR =====
-// Base prices per suburb (R thousands)
 var suburbPrices = {
   flora:   { base: 1200, growth: 1.12 },
   bendor:  { base: 2200, growth: 1.10 },
@@ -174,10 +167,8 @@ var suburbPrices = {
   ivypark: { base: 1500, growth: 1.08 }
 };
 
-// Bedroom multipliers
 var bedroomMultiplier = { '1': 0.6, '2': 0.8, '3': 1.0, '4': 1.25, '5': 1.5 };
 
-// Condition multipliers
 var conditionMultiplier = {
   excellent: 1.1,
   good:      1.0,
@@ -200,7 +191,6 @@ function calculateValuation() {
   var erfSize   = parseFloat(document.getElementById('erfSize').value) || 500;
   var condition = document.getElementById('condition').value;
 
-  // Basic validation
   if (!suburb || !propType) {
     alert('Please select a suburb and property type.');
     return;
@@ -208,7 +198,6 @@ function calculateValuation() {
 
   var data = suburbPrices[suburb] || { base: 1200, growth: 1.1 };
 
-  // Simple formula: base * bedroom factor * condition * size adjustment
   var sizeFactor  = 1 + (size - 150) / 1000;
   var erfFactor   = 1 + (erfSize - 500) / 5000;
   var estimate    = data.base * 1000
@@ -220,7 +209,6 @@ function calculateValuation() {
   var low  = estimate * 0.90;
   var high = estimate * 1.12;
 
-  // Show results
   document.getElementById('estimateValue').textContent = formatRands(estimate);
   document.getElementById('rangeLow').textContent      = formatRands(low);
   document.getElementById('rangeMid').textContent      = formatRands(low) + ' – ' + formatRands(high);
@@ -228,12 +216,10 @@ function calculateValuation() {
 
   var panel = document.getElementById('resultPanel');
   panel.classList.remove('active');
-  // Small timeout re-triggers the CSS animation
   setTimeout(function() { panel.classList.add('active'); }, 10);
 }
 
 
-// ===== CONTACT FORM =====
 function submitForm() {
   var name  = document.getElementById('contactName').value.trim();
   var email = document.getElementById('contactEmail').value.trim();
@@ -243,12 +229,10 @@ function submitForm() {
     return;
   }
 
-  // In production, replace this with a real fetch/POST to your backend
   alert('Thanks ' + name + '! We\'ll be in touch shortly.');
 }
 
 
-// ===== SMOOTH SCROLL for anchor links =====
 document.querySelectorAll('a[href^="#"]').forEach(function(link) {
   link.addEventListener('click', function(e) {
     var target = document.querySelector(this.getAttribute('href'));
@@ -260,7 +244,6 @@ document.querySelectorAll('a[href^="#"]').forEach(function(link) {
 });
 
 
-// ===== INIT =====
 document.addEventListener('DOMContentLoaded', function() {
   buildMiniChart();
   buildPriceChart();
