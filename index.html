@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Name | Modern Real Estate | Polokwane</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">RE/Polokwane</div>
+    <ul class="nav-links">
+      <li><a href="#market">Market</a></li>
+      <li><a href="#suburbs">Suburbs</a></li>
+      <li><a href="#valuation">Valuation</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book a Call</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>
+          Polokwane<br>
+          <span>Real Estate</span><br>
+          Reimagined.
+        </h1>
+        <p class="hero-subtitle">Live market data, instant valuations, and expert guidance for Polokwane's most sought-after suburbs.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">340+</span>
+            <span class="stat-label">Properties Sold</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">R2.1B</span>
+            <span class="stat-label">Total Value</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="#valuation" class="btn-primary">Get Free Valuation →</a>
+          <a href="#market" class="btn-secondary">View Market Data</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="floating-card card-1">
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-bottom:0.5rem;">MEDIAN PRICE — FLORA PARK</p>
+          <div class="price-tag">R1.45M</div>
+          <div class="trend-up">↑ 12.4% YoY</div>
+          <canvas class="chart-mini" id="miniChart1"></canvas>
+        </div>
+        <div class="floating-card card-2">
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-bottom:0.5rem;">DAYS ON MARKET</p>
+          <div class="price-tag" style="color:var(--neon-lime)">24</div>
+          <div class="trend-up">↓ 8 days faster</div>
+        </div>
+        <div class="floating-card card-3">
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-bottom:0.5rem;">ACTIVE LISTINGS</p>
+          <div class="price-tag">147</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Data -->
+  <section id="market">
+    <div class="section-header">
+      <span class="section-tag">Live Data</span>
+      <h2>Polokwane Market Overview</h2>
+      <p>Real-time insights across all major Polokwane suburbs, updated daily.</p>
+    </div>
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="card-header">
+          <span class="card-title">Price Trends 2024</span>
+          <div class="live-indicator"><span class="pulse"></span> Live</div>
+        </div>
+        <div class="chart-container">
+          <canvas id="priceChart"></canvas>
+        </div>
+        <div class="insight-pill">↑ Median up 14% since Jan 2024</div>
+      </div>
+      <div class="data-card">
+        <div class="card-header">
+          <span class="card-title">Sales by Suburb</span>
+          <div class="live-indicator"><span class="pulse"></span> Live</div>
+        </div>
+        <div class="chart-container">
+          <canvas id="suburbChart"></canvas>
+        </div>
+        <div class="insight-pill">Flora Park leads with 38 sales</div>
+      </div>
+      <div class="data-card">
+        <div class="card-header">
+          <span class="card-title">Property Type Split</span>
+          <div class="live-indicator"><span class="pulse"></span> Live</div>
+        </div>
+        <div class="chart-container">
+          <canvas id="typeChart"></canvas>
+        </div>
+        <div class="insight-pill">Freehold dominates at 62%</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Suburbs -->
+  <section id="suburbs" class="suburbs-section">
+    <div class="section-header">
+      <span class="section-tag">Explore</span>
+      <h2>Top Suburbs to Watch</h2>
+      <p>In-depth data on the most active Polokwane neighbourhoods.</p>
+    </div>
+    <div class="suburb-grid">
+      <div class="suburb-card">
+        <div class="suburb-image">🏘️</div>
+        <h3 class="suburb-name">Flora Park</h3>
+        <div class="price-range">R900K – R2.2M</div>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Family-friendly with excellent schools and parks.</p>
+        <div class="suburb-meta">
+          <div class="meta-item"><span class="meta-label">Avg Days</span><span class="meta-value">24</span></div>
+          <div class="meta-item"><span class="meta-label">YoY Growth</span><span class="meta-value">+12.4%</span></div>
+          <div class="meta-item"><span class="meta-label">Active</span><span class="meta-value">38 listings</span></div>
+          <div class="meta-item"><span class="meta-label">Demand</span><span class="meta-value">High</span></div>
+        </div>
+      </div>
+      <div class="suburb-card">
+        <div class="suburb-image">🏠</div>
+        <h3 class="suburb-name">Bendor</h3>
+        <div class="price-range">R1.2M – R4.5M</div>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Upscale estates and proximity to Polokwane CBD.</p>
+        <div class="suburb-meta">
+          <div class="meta-item"><span class="meta-label">Avg Days</span><span class="meta-value">31</span></div>
+          <div class="meta-item"><span class="meta-label">YoY Growth</span><span class="meta-value">+9.8%</span></div>
+          <div class="meta-item"><span class="meta-label">Active</span><span class="meta-value">27 listings</span></div>
+          <div class="meta-item"><span class="meta-label">Demand</span><span class="meta-value">Medium</span></div>
+        </div>
+      </div>
+      <div class="suburb-card">
+        <div class="suburb-image">🏡</div>
+        <h3 class="suburb-name">Penina Park</h3>
+        <div class="price-range">R600K – R1.4M</div>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Affordable entry-level homes with strong rental demand.</p>
+        <div class="suburb-meta">
+          <div class="meta-item"><span class="meta-label">Avg Days</span><span class="meta-value">18</span></div>
+          <div class="meta-item"><span class="meta-label">YoY Growth</span><span class="meta-value">+16.1%</span></div>
+          <div class="meta-item"><span class="meta-label">Active</span><span class="meta-value">52 listings</span></div>
+          <div class="meta-item"><span class="meta-label">Demand</span><span class="meta-value">Very High</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valuation Tool -->
+  <section id="valuation" class="valuation-section">
+    <div class="valuation-bg"></div>
+    <div class="section-header">
+      <span class="section-tag">Free Tool</span>
+      <h2>Instant Property Valuation</h2>
+      <p>Get a data-driven estimate for any Polokwane property in seconds.</p>
+    </div>
+    <div class="valuation-container">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="suburb">Suburb</label>
+          <select id="suburb">
+            <option value="">Select suburb...</option>
+            <option value="flora">Flora Park</option>
+            <option value="bendor">Bendor</option>
+            <option value="penina">Penina Park</option>
+            <option value="ivypark">Ivy Park</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="propType">Property Type</label>
+          <select id="propType">
+            <option value="">Select type...</option>
+            <option value="house">House (Freehold)</option>
+            <option value="sectional">Sectional Title</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="vacant">Vacant Land</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bedrooms">Bedrooms</label>
+          <select id="bedrooms">
+            <option value="1">1 Bedroom</option>
+            <option value="2">2 Bedrooms</option>
+            <option value="3">3 Bedrooms</option>
+            <option value="4">4 Bedrooms</option>
+            <option value="5">5+ Bedrooms</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="size">Floor Size (m²)</label>
+          <input type="number" id="size" placeholder="e.g. 180">
+        </div>
+        <div class="form-group">
+          <label for="erfSize">Erf Size (m²)</label>
+          <input type="number" id="erfSize" placeholder="e.g. 600">
+        </div>
+        <div class="form-group">
+          <label for="condition">Condition</label>
+          <select id="condition">
+            <option value="excellent">Excellent</option>
+            <option value="good">Good</option>
+            <option value="average">Average</option>
+            <option value="renovate">Needs Work</option>
+          </select>
+        </div>
+      </div>
+      <button class="calculate-btn" onclick="calculateValuation()">Calculate Estimated Value</button>
+
+      <div class="result-panel" id="resultPanel">
+        <div class="estimate-main">
+          <p class="estimate-label">Estimated Market Value</p>
+          <div class="estimate-value" id="estimateValue">R0</div>
+        </div>
+        <div class="estimate-range">
+          <div class="range-item">
+            <p class="range-label">Conservative</p>
+            <p class="range-value" id="rangeLow">—</p>
+          </div>
+          <div class="range-item">
+            <p class="range-label">Likely Range</p>
+            <p class="range-value" id="rangeMid">—</p>
+          </div>
+          <div class="range-item">
+            <p class="range-label">Optimistic</p>
+            <p class="range-value" id="rangeHigh">—</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="section-header">
+      <span class="section-tag">Reviews</span>
+      <h2>What Clients Say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p class="testimonial-text">Sold my Flora Park home in 19 days — 8% above asking price. The market data tools made all the difference in pricing it right from day one.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SM</div>
+          <div class="author-info">
+            <h4>Sarah M.</h4>
+            <p>Flora Park — Sold 2024</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p class="testimonial-text">Found our dream home in Bendor within two weeks. The suburb insights helped us understand exactly what we were getting for our money.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">TK</div>
+          <div class="author-info">
+            <h4>Thabo K.</h4>
+            <p>Bendor — Bought 2024</p>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <p class="testimonial-text">The instant valuation tool gave me a realistic price before I even listed. Incredibly accurate — final sale was within 3% of the estimate.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">LN</div>
+          <div class="author-info">
+            <h4>Lindiwe N.</h4>
+            <p>Penina Park — Sold 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="section-header">
+      <span class="section-tag">Get In Touch</span>
+      <h2>Let's Talk Property</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Ready to buy, sell, or invest?</h3>
+        <p>Book a free 30-minute consultation. No pressure, just data-driven advice.</p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="method-icon">📞</div>
+            <div class="method-details">
+              <h4>Phone</h4>
+              <p>+27 15 000 0000</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="method-icon">✉️</div>
+            <div class="method-details">
+              <h4>Email</h4>
+              <p>hello@yourname.co.za</p>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="method-icon">📍</div>
+            <div class="method-details">
+              <h4>Office</h4>
+              <p>123 Rabe Street, Polokwane, 0700</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" id="contactName">
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="Email Address" id="contactEmail">
+        </div>
+        <div class="form-row">
+          <input type="tel" placeholder="Phone Number" id="contactPhone">
+        </div>
+        <div class="form-row">
+          <textarea placeholder="Tell me about your property goals..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="submitForm()">Send Message →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="logo" style="font-size:2rem; margin-bottom:1rem;">RE/Polokwane</div>
+      <p style="color:rgba(255,255,255,0.5);">Modern Real Estate for Polokwane's discerning buyers and sellers.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">fb</a>
+        <a href="#" class="social-link">ig</a>
+        <a href="#" class="social-link">wa</a>
+      </div>
+      <p class="footer-text">© 2024 Your Name Properties. Registered with the PPRA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
